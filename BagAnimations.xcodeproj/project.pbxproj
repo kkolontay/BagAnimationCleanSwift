@@ -18,6 +18,15 @@
 		D00BF41A1FA72CB7005704D2 /* ListAnimationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BF4141FA72CB7005704D2 /* ListAnimationRouter.swift */; };
 		D00BF41B1FA72CB7005704D2 /* ListAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BF4151FA72CB7005704D2 /* ListAnimationViewController.swift */; };
 		D00BF41C1FA72CB7005704D2 /* ListAnimationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BF4161FA72CB7005704D2 /* ListAnimationWorker.swift */; };
+		D00BF4241FA7C71B005704D2 /* AnimationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BF41E1FA7C71B005704D2 /* AnimationInteractor.swift */; };
+		D00BF4251FA7C71B005704D2 /* AnimationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BF41F1FA7C71B005704D2 /* AnimationModels.swift */; };
+		D00BF4261FA7C71B005704D2 /* AnimationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BF4201FA7C71B005704D2 /* AnimationPresenter.swift */; };
+		D00BF4271FA7C71B005704D2 /* AnimationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BF4211FA7C71B005704D2 /* AnimationRouter.swift */; };
+		D00BF4281FA7C71B005704D2 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BF4221FA7C71B005704D2 /* AnimationViewController.swift */; };
+		D00BF4291FA7C71B005704D2 /* AnimationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00BF4231FA7C71B005704D2 /* AnimationWorker.swift */; };
+		D02FE0E71FB89777006FAC7C /* AnimationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02FE0E61FB89777006FAC7C /* AnimationCollectionViewCell.swift */; };
+		D02FE0E91FB8D708006FAC7C /* AnimationCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02FE0E81FB8D708006FAC7C /* AnimationCollectionViewLayout.swift */; };
+		D02FE0EC1FB8EDC8006FAC7C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02FE0EB1FB8EDC8006FAC7C /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +43,15 @@
 		D00BF4141FA72CB7005704D2 /* ListAnimationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAnimationRouter.swift; sourceTree = "<group>"; };
 		D00BF4151FA72CB7005704D2 /* ListAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAnimationViewController.swift; sourceTree = "<group>"; };
 		D00BF4161FA72CB7005704D2 /* ListAnimationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAnimationWorker.swift; sourceTree = "<group>"; };
+		D00BF41E1FA7C71B005704D2 /* AnimationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationInteractor.swift; sourceTree = "<group>"; };
+		D00BF41F1FA7C71B005704D2 /* AnimationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationModels.swift; sourceTree = "<group>"; };
+		D00BF4201FA7C71B005704D2 /* AnimationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPresenter.swift; sourceTree = "<group>"; };
+		D00BF4211FA7C71B005704D2 /* AnimationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationRouter.swift; sourceTree = "<group>"; };
+		D00BF4221FA7C71B005704D2 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		D00BF4231FA7C71B005704D2 /* AnimationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationWorker.swift; sourceTree = "<group>"; };
+		D02FE0E61FB89777006FAC7C /* AnimationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCollectionViewCell.swift; sourceTree = "<group>"; };
+		D02FE0E81FB8D708006FAC7C /* AnimationCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCollectionViewLayout.swift; sourceTree = "<group>"; };
+		D02FE0EB1FB8EDC8006FAC7C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +84,7 @@
 		D00BF3EB1FA72AB4005704D2 /* BagAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				D02FE0EA1FB8EDA9006FAC7C /* Network */,
 				D00BF40F1FA72C6D005704D2 /* Scenes */,
 				D00BF3EC1FA72AB4005704D2 /* AppDelegate.swift */,
 				D00BF3F01FA72AB4005704D2 /* Main.storyboard */,
@@ -80,6 +99,7 @@
 		D00BF40F1FA72C6D005704D2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D00BF41D1FA7C6F6005704D2 /* Animation */,
 				D00BF4101FA72C78005704D2 /* ListAnimation */,
 			);
 			path = Scenes;
@@ -88,6 +108,7 @@
 		D00BF4101FA72C78005704D2 /* ListAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				D02FE0E51FB8972E006FAC7C /* Additional */,
 				D00BF4111FA72CB7005704D2 /* ListAnimationInteractor.swift */,
 				D00BF4121FA72CB7005704D2 /* ListAnimationModels.swift */,
 				D00BF4131FA72CB7005704D2 /* ListAnimationPresenter.swift */,
@@ -96,6 +117,36 @@
 				D00BF4161FA72CB7005704D2 /* ListAnimationWorker.swift */,
 			);
 			path = ListAnimation;
+			sourceTree = "<group>";
+		};
+		D00BF41D1FA7C6F6005704D2 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				D00BF41E1FA7C71B005704D2 /* AnimationInteractor.swift */,
+				D00BF41F1FA7C71B005704D2 /* AnimationModels.swift */,
+				D00BF4201FA7C71B005704D2 /* AnimationPresenter.swift */,
+				D00BF4211FA7C71B005704D2 /* AnimationRouter.swift */,
+				D00BF4221FA7C71B005704D2 /* AnimationViewController.swift */,
+				D00BF4231FA7C71B005704D2 /* AnimationWorker.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		D02FE0E51FB8972E006FAC7C /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				D02FE0E61FB89777006FAC7C /* AnimationCollectionViewCell.swift */,
+				D02FE0E81FB8D708006FAC7C /* AnimationCollectionViewLayout.swift */,
+			);
+			path = Additional;
+			sourceTree = "<group>";
+		};
+		D02FE0EA1FB8EDA9006FAC7C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D02FE0EB1FB8EDC8006FAC7C /* Networking.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,13 +221,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00BF4251FA7C71B005704D2 /* AnimationModels.swift in Sources */,
 				D00BF4181FA72CB7005704D2 /* ListAnimationModels.swift in Sources */,
+				D02FE0EC1FB8EDC8006FAC7C /* Networking.swift in Sources */,
 				D00BF3F51FA72AB4005704D2 /* BagAnimations.xcdatamodeld in Sources */,
 				D00BF41C1FA72CB7005704D2 /* ListAnimationWorker.swift in Sources */,
 				D00BF4191FA72CB7005704D2 /* ListAnimationPresenter.swift in Sources */,
 				D00BF4171FA72CB7005704D2 /* ListAnimationInteractor.swift in Sources */,
+				D00BF4261FA7C71B005704D2 /* AnimationPresenter.swift in Sources */,
 				D00BF3ED1FA72AB4005704D2 /* AppDelegate.swift in Sources */,
 				D00BF41B1FA72CB7005704D2 /* ListAnimationViewController.swift in Sources */,
+				D00BF4271FA7C71B005704D2 /* AnimationRouter.swift in Sources */,
+				D00BF4281FA7C71B005704D2 /* AnimationViewController.swift in Sources */,
+				D02FE0E91FB8D708006FAC7C /* AnimationCollectionViewLayout.swift in Sources */,
+				D02FE0E71FB89777006FAC7C /* AnimationCollectionViewCell.swift in Sources */,
+				D00BF4241FA7C71B005704D2 /* AnimationInteractor.swift in Sources */,
+				D00BF4291FA7C71B005704D2 /* AnimationWorker.swift in Sources */,
 				D00BF41A1FA72CB7005704D2 /* ListAnimationRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

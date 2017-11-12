@@ -21,7 +21,9 @@ class ListAnimationViewController: UIViewController, ListAnimationDisplayLogic
 {
   var interactor: ListAnimationBusinessLogic?
   var router: (NSObjectProtocol & ListAnimationRoutingLogic & ListAnimationDataPassing)?
-
+  @IBOutlet weak var collectionAnimations: UICollectionView!
+  @IBOutlet weak var searchBar: UISearchBar!
+  var images = [UIImage]()
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -70,6 +72,8 @@ class ListAnimationViewController: UIViewController, ListAnimationDisplayLogic
   {
     super.viewDidLoad()
     doSomething()
+    let layout = collectionAnimations.collectionViewLayout as! AnimationCollectionViewLayout
+    layout.delegate = self
   }
   
   // MARK: Do something
@@ -85,5 +89,37 @@ class ListAnimationViewController: UIViewController, ListAnimationDisplayLogic
   func displaySomething(viewModel: ListAnimation.Something.ViewModel)
   {
     //nameTextField.text = viewModel.name
+  }
+}
+
+
+extension ListAnimationViewController: UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AnimationCollectionViewCell
+    return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return 1
+  }
+}
+
+extension ListAnimationViewController: UICollectionViewDelegate {
+  public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    
+  }
+}
+
+extension ListAnimationViewController: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)  {
+    
+  }
+}
+
+extension ListAnimationViewController: AnimationLayoutDelegate {
+  func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+    
+    //MARK: need resolved this issue
+    return 100
   }
 }
