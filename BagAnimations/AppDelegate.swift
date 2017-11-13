@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+//import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,12 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    self.saveContext()
+   // self.saveContext()
   }
 
   // MARK: - Core Data stack
 
-  lazy var persistentContainer: NSPersistentContainer = {
+ /* lazy var persistentContainer: NSPersistentContainer = {
       /*
        The persistent container for the application. This implementation
        creates and returns a container, having loaded the store for the
@@ -88,6 +88,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           }
       }
   }
-
+*/
 }
 

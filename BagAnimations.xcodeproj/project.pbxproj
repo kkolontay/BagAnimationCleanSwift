@@ -27,6 +27,9 @@
 		D02FE0E71FB89777006FAC7C /* AnimationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02FE0E61FB89777006FAC7C /* AnimationCollectionViewCell.swift */; };
 		D02FE0E91FB8D708006FAC7C /* AnimationCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02FE0E81FB8D708006FAC7C /* AnimationCollectionViewLayout.swift */; };
 		D02FE0EC1FB8EDC8006FAC7C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02FE0EB1FB8EDC8006FAC7C /* Networking.swift */; };
+		D04E4C371FBA3BEA00E2DBE4 /* AnimationItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4C351FBA3BEA00E2DBE4 /* AnimationItem+CoreDataClass.swift */; };
+		D04E4C381FBA3BEA00E2DBE4 /* AnimationItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4C361FBA3BEA00E2DBE4 /* AnimationItem+CoreDataProperties.swift */; };
+		D04E4C3A1FBA3C8200E2DBE4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4C391FBA3C8200E2DBE4 /* DataManager.swift */; };
 		D875DA30FA1BB6414655BDE6 /* Pods_BagAnimations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA797E46CBD7742EB883DBA6 /* Pods_BagAnimations.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		D02FE0E61FB89777006FAC7C /* AnimationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCollectionViewCell.swift; sourceTree = "<group>"; };
 		D02FE0E81FB8D708006FAC7C /* AnimationCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCollectionViewLayout.swift; sourceTree = "<group>"; };
 		D02FE0EB1FB8EDC8006FAC7C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D04E4C351FBA3BEA00E2DBE4 /* AnimationItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D04E4C361FBA3BEA00E2DBE4 /* AnimationItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D04E4C391FBA3C8200E2DBE4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		DA797E46CBD7742EB883DBA6 /* Pods_BagAnimations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BagAnimations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5EA17E673E73B19B1E6DF2 /* Pods-BagAnimations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BagAnimations.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BagAnimations/Pods-BagAnimations.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +97,7 @@
 		D00BF3EB1FA72AB4005704D2 /* BagAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				D04E4C241FBA397400E2DBE4 /* Data */,
 				D02FE0EA1FB8EDA9006FAC7C /* Network */,
 				D00BF40F1FA72C6D005704D2 /* Scenes */,
 				D00BF3EC1FA72AB4005704D2 /* AppDelegate.swift */,
@@ -154,6 +161,16 @@
 				D02FE0EB1FB8EDC8006FAC7C /* Networking.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D04E4C241FBA397400E2DBE4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D04E4C351FBA3BEA00E2DBE4 /* AnimationItem+CoreDataClass.swift */,
+				D04E4C361FBA3BEA00E2DBE4 /* AnimationItem+CoreDataProperties.swift */,
+				D04E4C391FBA3C8200E2DBE4 /* DataManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		E6E7FE67CCDE739CBACA48AB /* Frameworks */ = {
@@ -303,16 +320,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D00BF4251FA7C71B005704D2 /* AnimationModels.swift in Sources */,
+				D04E4C3A1FBA3C8200E2DBE4 /* DataManager.swift in Sources */,
 				D00BF4181FA72CB7005704D2 /* ListAnimationModels.swift in Sources */,
 				D02FE0EC1FB8EDC8006FAC7C /* Networking.swift in Sources */,
 				D00BF3F51FA72AB4005704D2 /* BagAnimations.xcdatamodeld in Sources */,
 				D00BF41C1FA72CB7005704D2 /* ListAnimationWorker.swift in Sources */,
 				D00BF4191FA72CB7005704D2 /* ListAnimationPresenter.swift in Sources */,
 				D00BF4171FA72CB7005704D2 /* ListAnimationInteractor.swift in Sources */,
+				D04E4C381FBA3BEA00E2DBE4 /* AnimationItem+CoreDataProperties.swift in Sources */,
 				D00BF4261FA7C71B005704D2 /* AnimationPresenter.swift in Sources */,
 				D00BF3ED1FA72AB4005704D2 /* AppDelegate.swift in Sources */,
 				D00BF41B1FA72CB7005704D2 /* ListAnimationViewController.swift in Sources */,
 				D00BF4271FA7C71B005704D2 /* AnimationRouter.swift in Sources */,
+				D04E4C371FBA3BEA00E2DBE4 /* AnimationItem+CoreDataClass.swift in Sources */,
 				D00BF4281FA7C71B005704D2 /* AnimationViewController.swift in Sources */,
 				D02FE0E91FB8D708006FAC7C /* AnimationCollectionViewLayout.swift in Sources */,
 				D02FE0E71FB89777006FAC7C /* AnimationCollectionViewCell.swift in Sources */,
