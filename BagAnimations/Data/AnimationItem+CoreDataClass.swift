@@ -12,5 +12,9 @@ import CoreData
 
 @objc(AnimationItem)
 public class AnimationItem: NSManagedObject {
-
+    
+    static func ==(lhs: AnimationItem, rhs: AnimationItem) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 }
