@@ -14,16 +14,18 @@ import UIKit
 
 protocol ListAnimationDisplayLogic: class
 {
-  func displaySomething(viewModel: ListAnimation.Something.ViewModel)
+//  func displaySomething(viewModel: ListAnimation.Something.ViewModel)
+  func displayAnimations(viewModel: ListAnimation.FetchAnimationItems.ViewModel)
 }
 
 class ListAnimationViewController: UIViewController, ListAnimationDisplayLogic
 {
+  
   var interactor: ListAnimationBusinessLogic?
   var router: (NSObjectProtocol & ListAnimationRoutingLogic & ListAnimationDataPassing)?
   @IBOutlet weak var collectionAnimations: UICollectionView!
-  @IBOutlet weak var searchBar: UISearchBar!
-  var images = [UIImage]()
+  @IBOutlet weak var animationSearchBar: UISearchBar!
+  var listAnimations: [ListAnimation.FetchAnimationItems.ViewModel.Animation] = Array<ListAnimation.FetchAnimationItems.ViewModel.Animation>()
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -71,27 +73,51 @@ class ListAnimationViewController: UIViewController, ListAnimationDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+   // doSomething()
+    animationSearchBar.delegate = self
     let layout = collectionAnimations.collectionViewLayout as! AnimationCollectionViewLayout
     layout.delegate = self
+    fetchAnimations(nil)
   }
   
+  func fetchAnimations(_ subjectForSearching: String?) {
+    let request = ListAnimation.FetchAnimationItems.Request(searchingSubject: subjectForSearching)
+    interactor?.fetchAnimation(request: request)
+    
+  }
   // MARK: Do something
   
   //@IBOutlet weak var nameTextField: UITextField!
   
-  func doSomething()
-  {
-    let request = ListAnimation.Something.Request()
-    interactor?.doSomething(request: request)
-  }
+//  func doSomething()
+//  {
+//    let request = ListAnimation.Something.Request()
+//    interactor?.doSomething(request: request)
+//  }
   
-  func displaySomething(viewModel: ListAnimation.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
+//  func displaySomething(viewModel: ListAnimation.Something.ViewModel)
+//  {
+//    //nameTextField.text = viewModel.name
+//  }
+  func displayAnimations(viewModel: ListAnimation.FetchAnimationItems.ViewModel) {
+    if viewModel.animations == nil {
+      listAnimations = Array<ListAnimation.FetchAnimationItems.ViewModel.Animation>()
+      collectionAnimations.reloadData()
+      showAlert(viewModel.error ?? "")
+    } else {
+       DispatchQueue.main.async {
+        self.listAnimations = viewModel.animations!
+        self.collectionAnimations.reloadData()
+      }
+    }
+  }
+  func showAlert(_ alertMessage: String) {
+    let alertController = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: .alert)
+    let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+    alertController.addAction(alertAction)
+    present(alertController, animated: true, completion: nil)
   }
 }
-
 
 extension ListAnimationViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -100,7 +126,7 @@ extension ListAnimationViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 1
+      return listAnimations.count
   }
 }
 
@@ -113,13 +139,19 @@ extension ListAnimationViewController: UICollectionViewDelegate {
 extension ListAnimationViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)  {
     
+    if searchText.count > 1 {
+      fetchAnimations(searchText)
+    }
+    if searchText.count == 0 {
+      fetchAnimations(nil)
+    }
   }
 }
 
 extension ListAnimationViewController: AnimationLayoutDelegate {
   func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-    
-    //MARK: need resolved this issue
-    return 100
+   let layout = collectionView.collectionViewLayout as! AnimationCollectionViewLayout
+    let index = layout.contentWidth / (listAnimations[indexPath.row] ).width
+    return (listAnimations[indexPath.row] ).height * index
   }
 }

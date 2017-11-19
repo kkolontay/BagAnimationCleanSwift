@@ -36,7 +36,6 @@ class GiphyAPIManage: NSObject {
             if error != nil {
                 completionHandler(nil, error)
                 fatalError("searching error")
-                return
             }
             self.maximumAnimationItem = (response?.pagination?.count)!
             completionHandler(response, nil)
@@ -52,7 +51,6 @@ class GiphyAPIManage: NSObject {
             if error != nil {
                 completionHandler(nil, error)
                 fatalError("next searching wrong")
-                return
             }
             completionHandler(response, nil)
         }

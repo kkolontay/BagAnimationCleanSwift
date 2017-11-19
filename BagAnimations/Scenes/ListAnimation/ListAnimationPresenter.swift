@@ -14,7 +14,8 @@ import UIKit
 
 protocol ListAnimationPresentationLogic
 {
-  func presentSomething(response: ListAnimation.Something.Response)
+//  func presentSomething(response: ListAnimation.Something.Response)
+  func presentAnimation(response: ListAnimation.FetchAnimationItems.Response)
 }
 
 class ListAnimationPresenter: ListAnimationPresentationLogic
@@ -22,10 +23,34 @@ class ListAnimationPresenter: ListAnimationPresentationLogic
   weak var viewController: ListAnimationDisplayLogic?
   
   // MARK: Do something
-  
-  func presentSomething(response: ListAnimation.Something.Response)
-  {
-    let viewModel = ListAnimation.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+  func presentAnimation(response: ListAnimation.FetchAnimationItems.Response) {
+    if response.animationItems == nil {
+      let listView = ListAnimation.FetchAnimationItems.ViewModel(animations: nil, error: "Nothing found")
+      viewController?.displayAnimations(viewModel: listView)
+    } else {
+      if response.error != nil {
+        let listView = ListAnimation.FetchAnimationItems.ViewModel(animations: nil, error: response.error)
+        viewController?.displayAnimations(viewModel: listView)
+        return
+      }
+      if response.animationItems != nil {
+        viewController?.displayAnimations(viewModel: fetchViewModel(response: response))
+      }
+    }
   }
+  
+  func fetchViewModel(response: ListAnimation.FetchAnimationItems.Response) -> ListAnimation.FetchAnimationItems.ViewModel {
+    var listAnimgationViewModel: Array<ListAnimation.FetchAnimationItems.ViewModel.Animation> = Array<ListAnimation.FetchAnimationItems.ViewModel.Animation>()
+    for item in response.animationItems! {
+      let animation = ListAnimation.FetchAnimationItems.ViewModel.Animation(image: item.smallAnimationData != nil ? UIImage.gifImageWithData(item.smallAnimationData! as Data): nil, width: CGFloat(item.smallAnimationWidth), height: CGFloat(item.smallAnimationHeight)  )
+      listAnimgationViewModel.append(animation)
+    }
+    return ListAnimation.FetchAnimationItems.ViewModel(animations: listAnimgationViewModel, error: nil)
+  }
+  
+//  func presentSomething(response: ListAnimation.Something.Response)
+//  {
+//    let viewModel = ListAnimation.Something.ViewModel()
+//    viewController?.displaySomething(viewModel: viewModel)
+//  }
 }

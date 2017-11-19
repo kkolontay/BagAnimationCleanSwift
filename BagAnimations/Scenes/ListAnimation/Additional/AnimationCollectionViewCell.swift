@@ -11,5 +11,9 @@ import UIKit
 class AnimationCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var imageAnimation: UIImageView!
   @IBOutlet weak var activity: UIActivityIndicatorView!
+  var animationItem: AnimationItem!
+  func setData(_ animationItem: AnimationItem) {
+    
+  }
   
 }

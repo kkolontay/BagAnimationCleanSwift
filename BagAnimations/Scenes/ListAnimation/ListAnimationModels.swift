@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import GiphyCoreSDK
 
 enum ListAnimation
 {
@@ -26,6 +27,28 @@ enum ListAnimation
     }
     struct ViewModel
     {
+    }
+  }
+  enum FetchAnimationItems
+  {
+    struct Request
+    {
+      let searchingSubject: String?
+    }
+    struct Response
+    {
+      var animationItems: [AnimationItem]?
+      var error: String?
+    }
+    struct ViewModel
+    {
+      struct Animation {
+        var image:UIImage?
+        var width: CGFloat
+        var height: CGFloat
+      }
+      var animations: [Animation]?
+      var error: String?
     }
   }
 }

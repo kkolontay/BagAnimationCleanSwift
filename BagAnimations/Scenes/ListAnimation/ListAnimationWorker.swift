@@ -12,8 +12,13 @@
 
 import UIKit
 
-class ListAnimationWorker
+class ListAnimationWorker: NSObject
 {
+  var giphyManager: GiphyAPIManage?
+  override init() {
+    super.init()
+    giphyManager = GiphyAPIManage()
+  }
   func doSomeWork()
   {
   }

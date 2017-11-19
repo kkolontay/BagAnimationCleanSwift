@@ -86,8 +86,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="List Of Animations" id="cd7-Le-bhT"/>
                     <connections>
+                        <outlet property="animationSearchBar" destination="mri-TP-UCe" id="HKJ-z2-qdi"/>
                         <outlet property="collectionAnimations" destination="UrA-Sz-dqa" id="JrF-WR-4ac"/>
-                        <outlet property="searchBar" destination="mri-TP-UCe" id="HYS-4I-aJs"/>
                         <outlet property="searchDisplayController" destination="qNI-dy-3Ww" id="c9K-nG-RZJ"/>
                     </connections>
                 </viewController>
@@ -95,7 +95,6 @@
                 <searchDisplayController id="qNI-dy-3Ww">
                     <connections>
                         <outlet property="delegate" destination="nLm-Cx-2ls" id="FTE-gI-e3v"/>
-                        <outlet property="searchBar" destination="mri-TP-UCe" id="p70-1Z-SJw"/>
                         <outlet property="searchContentsController" destination="nLm-Cx-2ls" id="ujx-8L-nus"/>
                         <outlet property="searchResultsDataSource" destination="nLm-Cx-2ls" id="OqC-pX-ggN"/>
                         <outlet property="searchResultsDelegate" destination="nLm-Cx-2ls" id="7q1-e0-9lb"/>

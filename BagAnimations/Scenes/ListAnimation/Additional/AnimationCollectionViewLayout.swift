@@ -14,12 +14,14 @@ protocol AnimationLayoutDelegate: class {
 
 class AnimationCollectionViewLayout: UICollectionViewLayout {
   weak var delegate: AnimationLayoutDelegate!
+  
  lazy var numberOfCollums: Int = {
     if UIScreen.main.bounds.width > UIScreen.main.bounds.height {
       return 3
     }
     return 2
   }()
+  
   var cellPadding: CGFloat = 2
   var cache = [UICollectionViewLayoutAttributes]()
   var contentHeight: CGFloat = 0
@@ -29,7 +31,7 @@ class AnimationCollectionViewLayout: UICollectionViewLayout {
       return 0
     }
     let insets = collectionView.contentInset
-    return collectionView.bounds.width - insets.left - insets.right
+    return collectionView.bounds.width / CGFloat (numberOfCollums) - insets.left - insets.right
   }
   
  override var collectionViewContentSize: CGSize {

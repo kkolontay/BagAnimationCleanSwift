@@ -75,13 +75,13 @@ class DataManager: NSObject {
             do {
                 let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AnimationItem")
                 fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-                result = try self.privateManagedObjectContext?.fetch(fetchRequest) as? [AnimationItem]
+              result = try self.privateManagedObjectContext?.fetch(fetchRequest) as? [AnimationItem]
             } catch {
                 fatalError( "Something went wrong." )
             }
         }
         if result != nil {
-            return result?.first
+          return result?.first
         }
         return nil
     }
